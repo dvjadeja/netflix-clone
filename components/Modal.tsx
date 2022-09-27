@@ -1,12 +1,17 @@
 import React from "react";
 import MuiModal from "@mui/material/Modal";
 import { modalState } from "../atoms/modalAtom";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 
 const Modal = () => {
-  const showModal = useRecoilValue(modalState);
+  const [showModal, setShowModal] = useRecoilState(modalState);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
-    <MuiModal open={showModal}>
+    <MuiModal open={showModal} onClose={handleClose}>
       <>Modal</>
     </MuiModal>
   );
