@@ -8,6 +8,6 @@ export const modalState = atom({
 });
 
 export const movieState = atom<Movie | DocumentData | null>({
-  key: "modalState",
+  key: "movieState",
   default: null,
 });
